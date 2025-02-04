@@ -32,7 +32,7 @@ Social engineering manipulates human behavior to gain private information, acces
 
 ### Social Engineering Principles
 
-Social engineering is effective because people are often trusting and respect authority.  Key principles exploited include:
+Social engineering is effective because people are often trusting and respect authority.  Key principles exploited include: 
 
 *   **Authority:** Impersonating powerful individuals.
 *   **Intimidation:** Using bullying tactics.
@@ -41,3 +41,33 @@ Social engineering is effective because people are often trusting and respect au
 *   **Familiarity:** Establishing a fake emotional connection.
 *   **Trust:** Building a relationship to gain trust and information.
 *   **Urgency:** Pressuring for quick action without questioning.
+
+## Attack Types
+
+This section summarizes common cybersecurity attack methods.
+
+### Password Attacks
+
+Attempts to gain access to password-protected resources (e.g., brute force, rainbow table).  **Communication & Network Security** domain.
+
+### Social Engineering
+
+Manipulates human behavior to gain access or information (e.g., phishing, smishing, vishing, spear phishing, whaling, BEC, watering hole, USB baiting). **Security & Risk Management** domain.
+
+### Physical Attacks
+
+Affect both digital and physical environments (e.g., malicious USB cables/drives, card skimming). **Asset Security** domain.
+
+### Adversarial AI
+
+Manipulates AI/ML for more efficient attacks. **Communication & Network Security** and **Identity & Access Management** domains.
+
+### Supply-Chain Attacks
+
+Targets vulnerabilities in systems, applications, or hardware within the supply chain.  Multiple domains, including **Security & Risk Management**, **Security Architecture & Engineering**, and **Security Operations**.
+
+### Cryptographic Attacks
+
+Targets secure communication (e.g., birthday, collision, downgrade attacks). **Communication & Network Security** domain.
+
+[NIST glossary](https://csrc.nist.gov/glossary/term/nist)
