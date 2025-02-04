@@ -23,3 +23,6 @@ Playbooks would outline the necessary steps for the investigation. Two key playb
 1.  **Chain of Custody Playbook:** Documents evidence possession and control during an incident lifecycle. This includes documenting who, what, where, and why evidence was collected, ensuring its safety and tracking its movement.  Every evidence transfer must be reported.
 
 2.  **Protecting and Preserving Evidence Playbook:** Guides handling fragile and volatile digital evidence.  This involves understanding the *order of volatility* (the sequence for preserving data, prioritizing volatile data that may be lost if a device is powered off).  Proper evidence handling is crucial, as improper management can compromise evidence and render it unusable.  Data preservation typically involves making copies and analyzing those copies to avoid altering the original evidence.
+
+[Google threat horizon](https://services.google.com/fh/files/blogs/gcat_threathorizons_full_sept2022.pdf)
+[CISA free tools](https://www.cisa.gov/resources-tools/resources/free-cybersecurity-services-and-tools)
