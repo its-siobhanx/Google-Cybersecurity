@@ -29,6 +29,38 @@ A firewall controls network traffic by allowing or blocking packets based on a p
 
 An Intrusion Detection System (IDS) passively monitors network traffic and/or system activity for malicious activity or policy violations.  It identifies suspicious patterns and alerts administrators to potential security incidents.
 
+# Cloud Security Considerations
+
+Many organizations adopt cloud services for their ease and speed of deployment, cost savings, and scalability. However, cloud computing introduces unique security challenges that cybersecurity analysts must address.
+
+## Identity and Access Management (IAM)
+
+IAM encompasses the processes and technologies used to manage digital identities and their access to resources. A common cloud security issue is misconfigured user roles. Improperly configured roles can grant unauthorized access to critical cloud operations, significantly increasing risk. Regularly reviewing and tightening IAM configurations is crucial.
+
+## Configuration
+
+The expanding cloud ecosystem adds considerable complexity to network management. Each cloud service requires precise configuration to meet security and compliance standards. This complexity is amplified during cloud migrations, where ensuring accurate configuration for every migrated process is essential. Misconfigurations are a frequent cause of breaches, making meticulous attention to detail by network administrators and architects paramount, both during migration and ongoing management.
+
+## Attack Surface
+
+Cloud Service Providers (CSPs) offer a wide range of applications and services, each with its own set of risks and vulnerabilities. Every new service or application increases an organization's attack surface. While a larger attack surface necessitates stronger security measures, a well-designed cloud architecture can leverage multiple services *without* necessarily increasing the number of entry points into the organization's network. It's important to remember that CSPs often employ more robust security measures than traditional on-premises networks and undergo more scrutiny.
+
+## Zero-Day Attacks
+
+Zero-day attacks (previously unknown exploits) are a concern for both cloud and on-premises environments. CSPs are often better positioned to detect and respond to zero-day attacks due to their scale and resources. They can patch hypervisors and migrate workloads, minimizing customer impact. Organizations should also utilize available tools for patching at the operating system level.
+
+## Visibility and Tracking
+
+While network administrators typically have complete visibility into on-premises network traffic, cloud environments present a different landscape. CSPs provide tools like flow logs and packet mirroring, but they do *not* allow customers to monitor traffic on the CSP's servers. This lack of full visibility can be a concern for organizations accustomed to complete control. However, CSPs undergo third-party audits to verify their security posture, which can help organizations assess their own on-premises vulnerabilities and compliance.
+
+## Rapid Change in the Cloud
+
+CSPs constantly update their technologies and services. This rapid pace of change can be challenging for organizations, as cloud service updates may require adjustments to security configurations and IT processes. Organizations must adapt their processes to align with CSP changes while maintaining established security best practices.
+
+## Shared Responsibility Model
+
+A fundamental
+
 Key Characteristics:
 
 *   **Passive Monitoring:**  IDS primarily observes traffic and system events without actively blocking or altering them.
