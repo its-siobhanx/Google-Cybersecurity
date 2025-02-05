@@ -65,4 +65,27 @@ Key Characteristics:
 
 *   **Passive Monitoring:**  IDS primarily observes traffic and system events without actively blocking or altering them.
 *   **Signature-Based or Anomaly-Based Detection:** IDS can use signature-based detection (looking for known attack patterns) or anomaly-based detection (identifying deviations from normal behavior).
-*   **Alert
+
+# Cryptography in the Cloud
+
+Cryptography plays a crucial role in securing data processed and stored in cloud environments. By using encryption and secure key management systems, cryptography ensures data integrity and confidentiality.  Encryption is a cornerstone of protecting sensitive information in the cloud.
+
+## Encryption
+
+Encryption transforms information into ciphertext, making it unreadable without the corresponding decryption key.  Historically, encryption involved manual encoding using algorithms.  Modern encryption, however, relies on the secrecy of the *key* rather than the algorithm itself. Cryptography is an essential tool for securing cloud networks and data at rest, preventing unauthorized access.  (A more in-depth exploration of cryptography will be covered in a future course.)
+
+## Cryptographic Erasure (Crypto-shredding)
+
+Cryptographic erasure, also known as crypto-shredding, is a method of data destruction that focuses on erasing the encryption key rather than the data itself. Traditional data destruction methods are often less effective in cloud environments. Crypto-shredding renders data indecipherable by destroying the cryptographic keys used to encrypt it.  It's crucial that *all* copies of the key are destroyed to prevent any future access to the data.
+
+## Key Management
+
+The security of modern encryption hinges on keeping encryption keys secure.  Several measures can be taken to protect data when using cloud applications:
+
+*   **Trusted Platform Module (TPM):** A TPM is a hardware chip that securely stores passwords, certificates, and encryption keys.
+
+*   **Cloud Hardware Security Module (CloudHSM):** A CloudHSM is a dedicated computing device that provides secure storage for cryptographic keys and performs cryptographic operations like encryption and decryption.
+
+While organizations and customers don't typically have direct access to the CSP's infrastructure, they can request audits and security reports.  Customers often don't have access to the specific encryption keys used by CSPs.  However, many CSPs offer the option for customers to provide and manage their own encryption keys, depending on the specific service.  In such cases, the customer assumes full responsibility for the confidentiality and security of these customer-managed keys.  The CSP's ability to assist in case of key compromise or loss is limited.
+
+One advantage of the shared responsibility model is that customers aren't solely responsible for the maintenance of the cryptographic infrastructure.  Organizations can assess the risk associated with CSP-managed infrastructure by reviewing the CSP's audits and security controls.  For US federal contractors, FEDRAMP provides a list of verified CSPs.
