@@ -16,3 +16,21 @@ Common prevention measures against brute force and similar attacks:
 *   **Multi-Factor Authentication (MFA) and Two-Factor Authentication (2FA):** MFA requires multiple verification methods (e.g., password, fingerprint, OTP). 2FA uses two verification methods.
 *   **CAPTCHA and reCAPTCHA:** CAPTCHAs are tests to verify users are human, preventing automated brute force attempts. reCAPTCHA is a free CAPTCHA service from Google.
 *   **Password Policies:** Standardize good password practices with guidelines on password complexity, update frequency, reuse restrictions, and login attempt limits.
+
+# Network Hardening - Firewalls, Intrusion Detection/Prevention, and SIEM
+
+This document outlines key network security components: Firewalls, Intrusion Detection/Prevention Systems (IDS/IPS), and Security Information and Event Management (SIEM).
+
+## Firewalls
+
+A firewall controls network traffic by allowing or blocking packets based on a predefined set of rules.  It inspects packet headers and makes decisions based on the information they contain.  Firewalls operate at the network layer and transport layer, and can filter based on source/destination IP addresses, ports, protocols, and other header fields.  It's crucial to understand that firewalls only examine header information; they do not inspect the payload of the packets.
+
+## Intrusion Detection System (IDS)
+
+An Intrusion Detection System (IDS) passively monitors network traffic and/or system activity for malicious activity or policy violations.  It identifies suspicious patterns and alerts administrators to potential security incidents.
+
+Key Characteristics:
+
+*   **Passive Monitoring:**  IDS primarily observes traffic and system events without actively blocking or altering them.
+*   **Signature-Based or Anomaly-Based Detection:** IDS can use signature-based detection (looking for known attack patterns) or anomaly-based detection (identifying deviations from normal behavior).
+*   **Alert
