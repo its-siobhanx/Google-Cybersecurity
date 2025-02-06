@@ -1,6 +1,6 @@
 # Navigating the Linux File System
 
-Understanding the Linux file system hierarchy is crucial for cybersecurity professionals.  The File System Hierarchy Standard (FHS) defines the structure and organization of files and directories.  File locations are described by *file paths*, where levels in the hierarchy are separated by forward slashes (`/`).
+The File System Hierarchy Standard (FHS) defines the structure and organization of files and directories.  File locations are described by *file paths*, where levels in the hierarchy are separated by forward slashes (`/`).
 
 ## Root Directory
 
@@ -204,3 +204,128 @@ Redirects the output of a command to a file, *appending* the output to the end o
 **Example:** `echo "last updated date" >> permissions.txt` (adds "last updated date" to the end of `permissions.txt`).
 
 **Note:** Both `>` and `>>` will create a new file if it doesn't already exist.  Use `>` with care to avoid accidental data loss.
+
+## Linux File Permissions
+
+In Linux, permissions are represented with a 10-character string.  These permissions control access to files and directories.
+
+### Permissions
+
+There are three basic permissions:
+
+*   **read (r):**
+    *   *Files:* The ability to read the file contents.
+    *   *Directories:* The ability to list the directory contents (including files and subdirectories).
+*   **write (w):**
+    *   *Files:* The ability to modify the file contents.
+    *   *Directories:* The ability to create new files and subdirectories within the directory.
+*   **execute (x):**
+    *   *Files:* The ability to execute the file (if it's a program).
+    *   *Directories:* The ability to enter the directory and access its contents (files and subdirectories).
+
+### Owners
+
+Permissions are assigned to three types of owners:
+
+*   **user (u):** The owner of the file.
+*   **group (g):** A group that the owner is a member of.  Other users in this group may have specific permissions.
+*   **other (o):** All other users on the system who are not the owner or a member of the file's group.
+
+### The 10-Character Permission String
+
+Each character in the 10-character string conveys specific information about these permissions.  The string is structured as follows:
+
+## Breakdown of the 10-Character Permission String
+
+The 10-character string representing file permissions in Linux can be broken down as follows:
+
+| Character | Example     | Meaning                                                                    |
+| :-------- | :---------- | :------------------------------------------------------------------------- |
+| 1st       | `d` or `-` | File type: `d` (directory), `-` (regular file), `l` (symbolic link), etc. |
+| 2nd       | `r` or `-` | Read permission for the **user** (owner): `r` (has read), `-` (no read)     |
+| 3rd       | `w` or `-` | Write permission for the **user**: `w` (has write), `-` (no write)          |
+| 4th       | `x` or `-` | Execute permission for the **user**: `x` (has execute), `-` (no execute)      |
+| 5th       | `r` or `-` | Read permission for the **group**: `r` (has read), `-` (no read)            |
+| 6th       | `w` or `-` | Write permission for the **group**: `w` (has write), `-` (no write)         |
+| 7th       | `x` or `-` | Execute permission for the **group**: `x` (has execute), `-` (no execute)     |
+| 8th       | `r` or `-` | Read permission for **others**: `r` (has read), `-` (no read)               |
+| 9th       | `w` or `-` | Write permission for **others**: `w` (has write), `-` (no write)            |
+| 10th      | `x` or `-` | Execute permission for **others**: `x` (has execute), `-` (no execute)        |
+
+**Example:**
+
+`drwxr-xr--`
+
+This represents a directory (`d`) where:
+
+*   The owner (user) has read, write, and execute permissions (`rwx`).
+*   The group has read and execute permissions (`rx`).
+*   Others have read permission (`r`).
+
+### Viewing Permissions
+
+The `ls` command lists files and directories.  Several options provide additional details:
+
+*   `ls -a`: Displays hidden files (those starting with a dot ".").
+*   `ls -l`: Displays detailed information, including permissions, owner, group, size, and modification time.
+*   `ls -la`: Combines both options, displaying detailed information for all files, including hidden files.
+
+### Changing Permissions
+
+The `chmod` command changes file and directory permissions. It requires two arguments:
+
+1.  How to change permissions (add, remove, or set specific permissions).
+2.  The target file or directory.
+
+Permissions are assigned to three categories:
+
+*   `u`: User (owner)
+*   `g`: Group
+*   `o`: Others
+
+Permission changes are specified using operators:
+
+*   `+`: Add permission
+*   `-`: Remove permission
+*   `=`: Set permission (overwrites existing permissions)
+
+**Examples:**
+
+*   `chmod u+rwx,g+rwx,o+rwx login_sessions.txt`: Adds all permissions (read, write, and execute) for everyone (user, group, and others) to the `login_sessions.txt` file.
+
+*   `chmod u=r,g=r,o=r login_sessions.txt`: Sets read permission only for everyone to the `login_sessions.txt` file.  This command *overwrites* any existing permissions, meaning any write or execute permissions would be removed.
+
+## Authentication and Authorization with `sudo`
+
+The `sudo` command is crucial for managing authentication and authorization in Linux.  Authentication verifies user identity, while authorization grants access to specific resources.  Here's a breakdown of key commands used with `sudo`:
+
+### User Management
+
+*   **`useradd`**: Adds a new user.
+    *   `sudo useradd fgarcia`: Adds a user named `fgarcia`.
+    *   `-g`: Sets the user's primary group.  `sudo useradd -g security fgarcia` sets the primary group to `security`.
+    *   `-G`: Adds the user to supplemental (secondary) groups. `sudo useradd -G finance,admin fgarcia` adds `fgarcia` to the `finance` and `admin` groups.
+
+*   **`usermod`**: Modifies existing user accounts.
+    *   `-g`: Changes the user's primary group.  `sudo usermod -g executive fgarcia` changes `fgarcia`'s primary group to `executive`.
+    *   `-G`: Adds or modifies supplemental groups. Use with `-a` to append to existing groups.  `sudo usermod -a -G marketing fgarcia` adds `fgarcia` to the `marketing` group *without* removing other supplemental groups.  **Important:** Without `-a`, `-G` *replaces* existing supplemental groups.
+    *   `-d`: Changes the user's home directory. `sudo usermod -d /home/garcia_f fgarcia` changes `fgarcia`'s home directory.
+    *   `-l`: Changes the user's login name.
+    *   `-L`: Locks the user account, preventing login.
+
+*   **`userdel`**: Deletes a user.
+    *   `sudo userdel fgarcia`: Deletes the user `fgarcia`.
+    *   `-r`: Deletes the user's home directory and files. `sudo userdel -r fgarcia` deletes `fgarcia` and their home directory.  **Caution:** Use with care!
+    *   **Recommendation:** Instead of deleting, consider deactivating an account with `usermod -L`. This preserves ownership information and allows for later access if needed.
+
+### Ownership Management
+
+*   **`chown`**: Changes the owner of a file or directory.
+    *   `sudo chown fgarcia access.txt`: Changes the user owner of `access.txt` to `fgarcia`.
+    *   `sudo chown :security access.txt`: Changes the group owner of `access.txt` to `security`.  The colon `:` is required before the group name.
+
+**Key Considerations:**
+
+*   Always use `sudo` when managing users, groups, and file ownership to ensure proper authorization.
+*   Be extremely cautious when using `userdel -r` as it permanently deletes user data.  Deactivating accounts (`usermod -L`) is often a safer alternative.
+*   Understand the difference between `-g` (primary group) and `-G` (supplemental groups) with `useradd` and `usermod`.  Remember to use `-a` with `-G` in `usermod` to avoid accidentally removing existing supplemental group memberships.
