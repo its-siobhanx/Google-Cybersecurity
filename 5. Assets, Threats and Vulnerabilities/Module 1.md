@@ -1,0 +1,3 @@
+Likelihood x Impact = Risk
+
+
