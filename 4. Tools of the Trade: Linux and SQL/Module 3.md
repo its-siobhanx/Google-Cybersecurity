@@ -329,3 +329,31 @@ The `sudo` command is crucial for managing authentication and authorization in L
 *   Always use `sudo` when managing users, groups, and file ownership to ensure proper authorization.
 *   Be extremely cautious when using `userdel -r` as it permanently deletes user data.  Deactivating accounts (`usermod -L`) is often a safer alternative.
 *   Understand the difference between `-g` (primary group) and `-G` (supplemental groups) with `useradd` and `usermod`.  Remember to use `-a` with `-G` in `usermod` to avoid accidentally removing existing supplemental group memberships.
+
+## Getting Help with Commands: `man`, `apropos`, and `whatis`
+
+Linux provides several helpful commands for learning about other commands and their usage:
+
+### `man` (manual)
+
+The `man` command displays detailed information (manual pages) about a specific command.  It's the most comprehensive resource.
+
+*   **Usage:** `man <command_name>`
+*   **Example:** `man chown` displays the manual page for the `chown` command, including its syntax, options, and usage examples.
+
+### `apropos`
+
+The `apropos` command searches the *descriptions* of man pages for a specific keyword or string.  It's useful when you don't know the exact command name but know a related term.
+
+*   **Usage:** `apropos <keyword>`
+*   **Example:** `apropos network` searches for man pages with "network" in their description.
+*   **Multiple Keywords:** Use the `-a` option to search for man pages containing *all* specified keywords. `apropos -a graph editor` finds man pages containing both "graph" and "editor".
+
+### `whatis`
+
+The `whatis` command provides a very brief, one-line description of a command.  It's a quick way to get a basic understanding or reminder of a command's purpose.
+
+*   **Usage:** `whatis <command_name>`
+*   **Example:** `whatis nano` displays a short description of the `nano` text editor.  This is useful for a quick reminder or when you encounter a new command and want a fast overview.
+
+[Linux help page](https://unix.stackexchange.com/)
