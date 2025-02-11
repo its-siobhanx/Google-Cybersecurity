@@ -28,3 +28,7 @@ Suricata generates two types of log files when alerts are triggered:
 1. **eve.json**: This is the standard log file, containing detailed event information and metadata in JSON format. It includes a unique **flow_id** to correlate related logs or alerts to a single network flow, making it useful for detailed analysis and SIEM log ingestion.
 2. **fast.log**: This file records basic alert information, such as IP addresses and ports, and is used for minimal logging and alerting. It is considered a legacy format and is not suitable for in-depth incident response or threat hunting.
 
+## Splunk and Chronicle
+
+[Splunk](https://docs.splunk.com/Documentation/Splunk/9.0.2/SearchReference/UnderstandingSPLsyntax)
+[Chronicle](https://cloud.google.com/chronicle/docs/reference/udm-field-list)
