@@ -30,4 +30,21 @@ In a programming language, a variable is a container that stores data. It's a na
 * Remember that variable names in Python are case-sensitive.
 * Don't use Python’s built-in keywords or functions for variable names. 
 
+## Conditionals
+
+| Operator | Description              |
+|----------|--------------------------|
+| `>`      | greater than             |
+| `<`      | less than                |
+| `>=`     | greater than or equal to |
+| `<=`     | less than or equal to    |
+| `==`     | equal to                 |
+| `!=`     | not equal to             |
+
+### if statements
+The keyword if starts a conditional statement. It’s a necessary component of any conditional statement.
+
+* The first line of this code is the header. In the header of an if statement, the keyword if is followed by the condition. The condition can be placed in brackets:
+* You must always place a colon (:) at the end of the header. Without this syntax, the code will produce an error.
+
 
