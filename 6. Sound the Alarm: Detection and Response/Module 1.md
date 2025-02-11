@@ -24,3 +24,17 @@ A Security Operations Center (SOC) is responsible for monitoring networks, syste
 * Tier 3: Or SOC leads, are highly experienced and manage team operations. They perform advanced detection techniques like malware and forensics analysis and report to the SOC manager.
 * The SOC manager: Oversees the team by hiring, training, and evaluating members. They create performance metrics, manage team performance, develop incident, compliance, and audit reports, and communicate findings to stakeholders, including executive management.
 
+## Incident Response Tools
+
+| Capability               | IDS | IPS | EDR |
+|--------------------------|-----|-----|-----|
+| Detects malicious activity| ✓   | ✓   | ✓   |
+| Prevents intrusions       | N/A | ✓   | ✓   |
+| Logs activity             | ✓   | ✓   | ✓   |
+| Generates alerts          | ✓   | ✓   | ✓   |
+| Performs behavioral analysis| N/A | N/A | ✓   |
+
+* IDS: An Intrusion Detection System (IDS) monitors system activity to detect and alert on potential intrusions, providing continuous network event monitoring to identify security threats. However, an IDS does not prevent or stop malicious activity; it generates alerts for security professionals to investigate and respond if needed. For example, it can alert on suspicious user logins, but it won’t block the login itself. Examples of IDS tools include Zeek, Suricata, Snort®, and Sagan.
+* IPS: An Intrusion Prevention System (IPS) monitors system activity for intrusions and takes action to stop them, unlike an IDS that only alerts. It detects and prevents malicious activity, such as blocking specific traffic by modifying access control lists. Many IDS tools, like Suricata, Snort, and Sagan, can also function as IPS, offering both detection and prevention capabilities.
+* EDR: Endpoint Detection and Response (EDR) monitors devices (endpoints) for malicious activity. EDR tools, installed on endpoints like computers, phones, and tablets, record and analyze system activity to detect, alert, and respond to suspicious behavior. Unlike IDS/IPS, EDR tools use behavioral analysis, powered by machine learning and AI, to identify threat patterns. EDR can also automate responses to stop attacks, such as blocking unusual processes. Examples of EDR tools include Open EDR®, Bitdefender™ Endpoint Detection and Response, and FortiEDR™.
+
