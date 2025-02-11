@@ -15,3 +15,16 @@ Suricata has three main uses:
 1. **Intrusion Detection System (IDS)**: Suricata monitors network traffic to detect and alert on suspicious activities and intrusions. It can also be configured as a host-based IDS to track system and network activities on individual hosts.
 2. **Intrusion Prevention System (IPS)**: Suricata can detect and block malicious activity and traffic when configured as an IPS, which requires additional setup to enable IPS mode.
 3. **Network Security Monitoring (NSM)**: Suricata helps safeguard networks by generating and storing network logs. It analyzes live traffic, packet capture files, and creates packet captures for forensics, incident response, and testing signatures, such as capturing live traffic to refine detection signatures.
+
+Suricata uses rules or signatures to detect specific patterns and behaviors in network traffic that may indicate malicious activity. These terms are often interchangeable in Suricata. Signatures help security analysts identify and alert on potential threats, while rules provide context and visibility into networks and systems. 
+
+A Suricata signature consists of three components:
+1. **Action**: Specifies the response if network activity matches the signature (e.g., alert, pass, drop, reject).
+2. **Header**: Contains network traffic details, such as source/destination IPs, ports, protocol, and traffic direction.
+3. **Rule Options**: Customize signatures with different options to refine detection.
+
+Suricata generates two types of log files when alerts are triggered:
+
+1. **eve.json**: This is the standard log file, containing detailed event information and metadata in JSON format. It includes a unique **flow_id** to correlate related logs or alerts to a single network flow, making it useful for detailed analysis and SIEM log ingestion.
+2. **fast.log**: This file records basic alert information, such as IP addresses and ports, and is used for minimal logging and alerting. It is considered a legacy format and is not suitable for in-depth incident response or threat hunting.
+
