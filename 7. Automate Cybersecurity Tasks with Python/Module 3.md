@@ -33,3 +33,33 @@ List methods are functions that are specific to the list data type. These includ
 * The .remove() method removes the first occurrence of a specific element in a list. It has only one parameter, the element you want to remove.
 * The .append() method adds input to the end of a list. Its one parameter is the element you want to add to the end of the list.
 * Similar to the .index() method used for strings, the .index() method used for lists finds the first occurrence of an element in a list and returns its index. It takes the element you're searching for as an input.
+
+# Regular Expressions in Python
+
+**Regular expressions (regex)** are patterns used to match character combinations in strings. They are powerful tools for text processing tasks like searching, replacing, or validating data (e.g., emails, phone numbers, etc.).
+
+In Python, the `re` module provides functions to work with regular expressions.
+
+## Key Concepts:
+1. **Patterns**: Regular expressions are patterns composed of special characters (metacharacters) that define search criteria. For example, `\d` matches any digit, and `.` matches any character.
+
+2. **Functions**: Common functions in the `re` module include:
+   - **`re.match()`**: Checks if the pattern matches at the beginning of the string.
+   - **`re.search()`**: Searches for the pattern anywhere in the string.
+   - **`re.findall()`**: Returns a list of all matches.
+   - **`re.sub()`**: Replaces occurrences of the pattern with a replacement string.
+
+## Example:
+
+```python
+import re
+
+# Example string
+text = "My phone number is 555-1234."
+
+# Search for a pattern (digits followed by a hyphen)
+match = re.search(r"\d{3}-\d{4}", text)
+
+if match:
+    print("Phone number found:", match.group())  # Output: 555-1234
+
