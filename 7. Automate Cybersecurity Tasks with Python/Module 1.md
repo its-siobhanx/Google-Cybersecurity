@@ -46,5 +46,39 @@ The keyword if starts a conditional statement. It’s a necessary component of a
 
 * The first line of this code is the header. In the header of an if statement, the keyword if is followed by the condition. The condition can be placed in brackets:
 * You must always place a colon (:) at the end of the header. Without this syntax, the code will produce an error.
+* After the header of an if statement comes the body of the if statement. This tells Python what action or actions to perform when the condition evaluates to True.
+* Must have the body idented
+* The keyword else precedes a code section that only evaluates when all conditions that precede it within the conditional statement evaluate to False. Requires : too
+* In some cases, you might have multiple alternative actions that depend on new conditions. In that case, you can use elif. The elif keyword precedes a condition that is only evaluated when previous conditions evaluate to False. Unlike with else, there can be multiple elif statements following if.
+* Can use logical operators along with if statements: and, or not
+* And must have both conditions evaluate to true
+* Or requires only one of the conditions on either side of the operator to evaluate to True.
+* Not negates a given condition so that it evaluates to False if the condition is True and to True if it is False.
+
+## Loops
+An iterative statement is code that repeatedly executes a set of instructions. Depending on the criteria, iterative statements execute zero or more times. 
+
+### for loops
+If you need to iterate through a specified sequence, you should use a for loop. 
+
+* The first line of this code is the loop header. In the loop header, the keyword for signals the beginning of a for loop.
+* Directly after for, the loop variable appears. The loop variable is a variable that is used to control the iterations of a loop. In for loops, the loop variable is part of the header. Typically i is used.
+* can use in operator with it
+* In the body, you indicate what the loop should do with each iteration.
+* The start point is inclusive, meaning that 0 will be included in the sequence of numbers, but the stop point is exclusive, meaning that 5 will be excluded from the sequence. It will conclude one integer before the stopping point.
+* for i in range(5):  # Iterates from 0 to 4
+    print(i)
+
+ ### while loops
+ If you want a loop to iterate based on a condition, you should use a while loop. As long as the condition is True, the loop continues, but when it evaluates to False, the while loop exits. 
+
+ * In this while loop, the loop header is the line while i < 5:
+ * Unlike with for loops, the value of a loop variable used to control the iterations is not assigned within the loop header in a while loop. Instead, it is assigned outside of the loop. In this example, i is assigned a starting value of 1 in a line preceding the loop.
+ * The keyword while signals the beginning of a while loop. After this, the loop header indicates the condition that determines when the loop terminates. This condition uses the same comparison operators as conditional statements. Like in a for loop, the header of a while loop must end with a colon (:).
+ * The body of a while loop indicates the actions to take with each iteration.
+ * Conditions in while loops can also depend on other data types, including comparisons of Boolean data. In Boolean data comparisons, your loop condition can check whether a loop variable equals a value like True or False. The loop iterates an indeterminate number of times until the Boolean condition is no longer True.
+
+### Managing loops
+You can use the break and continue keywords to further control your loop iterations. Both are incorporated into a conditional statement within the body of the loop. They can be inserted to execute when the condition in an if statement is True. The break keyword is used to break out of a loop. The continue keyword is used to skip an iteration and continue with the next one. 
 
 
