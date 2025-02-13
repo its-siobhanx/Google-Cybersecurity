@@ -36,4 +36,9 @@ However, with .join(), you must pass the list that you want to concatenate into 
 When working with files, it may also be necessary to convert its contents back into a string. For example, you may want to use the .write() method. The .write() method writes string data to a file. This means that if you have converted a file's contents into a list while working with it, you'll need to convert it back into a string before using .write(). You can use the .join() method for this.
 
 
+# Debugging
+Types of errors:
+* **Syntax:** an error that involves invalid usage of a programming language. Syntax errors occur when there is a mistake with the Python syntax itself. Common examples of syntax errors include forgetting a punctuation mark, such as a closing bracket for a list or a colon after a function header.
+* **Logic:** an error that results when the logic used in code produces unintended results.  Logic errors may not produce error messages. In other words, the code will not do what you expect it to do, but it is still valid to the interpreter.
+* **Exceptions:** an error that involves code that cannot be executed even though it is syntactically correct. This happens for a variety of reasons.
 
